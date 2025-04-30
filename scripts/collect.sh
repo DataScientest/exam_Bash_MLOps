@@ -1,31 +1,29 @@
 # ==============================================================================
-# Script : collect.sh
-# Description :
-#   Ce script interroge une API toutes les minutes pendant 3 minutes afin de
-#   récupérer les ventes des modèles de cartes graphiques suivants :
+# Script: collect.sh
+# Description:
+#   This script queries an API every minute for 3 minutes to retrieve sales data
+#   for the following graphics card models:
 #     - rtx3060
 #     - rtx3070
 #     - rtx3080
 #     - rtx3090
 #     - rx6700
 #
-#   Les données collectées sont ajoutées à une copie du fichier :
+#   The collected data is appended to a copy of the file:
 #     data/raw/sales_data.csv
 #
-#   Le fichier de sortie est sauvegardé au format :
+#   The output file is saved in the format:
 #     data/raw/sales_YYYYMMDD_HHMM.csv
-#   avec les colonnes suivantes :
+#   with the following columns:
 #     timestamp, model, sales
 #
-#   L’activité de collecte (requêtes, modèles interrogés, résultats, erreurs)
-#   est enregistrée dans un fichier de log :
+#   Collection activity (requests, queried models, results, errors)
+#   is recorded in a log file:
 #     logs/collect.logs
 #
-#   Le log est lisible et doit inclure :
-#     - La date et l’heure de chaque requête
-#     - Les modèles interrogés
-#     - Les ventes récupérées
-#     - Les éventuelles erreurs
+#   The log should be human-readable and must include:
+#     - The date and time of each request
+#     - The queried models
+#     - The retrieved sales data
+#     - Any possible errors
 # ==============================================================================
-
-
