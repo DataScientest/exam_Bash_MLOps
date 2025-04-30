@@ -108,7 +108,7 @@ curl "http://0.0.0.0:5000/rtx3060"
 - Add a folder named exam_bash
 - Clone the Git for the exam modalities:
 ```shell 
-git clone https://github.com/DataScientest/exam_Bash_MLOps.git
+git clone -b English https://github.com/DataScientest/exam_Bash_MLOps.git
 ```
 
 When cloning the git, you will have the following structure:
