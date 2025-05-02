@@ -172,6 +172,8 @@ A **Makefile** will be used to facilitate the execution of tasks and automate th
 make bash
 ```
 
+Make sure to activate your virtual environment before starting the exam.
+
 #### Files to Modify
 
 You will find in the different files to modify, the instructions corresponding to each task to be completed.
@@ -222,7 +224,7 @@ make tests
 
 This will create files test_*.logs in logs/tests_logs.
 
-Example of log output:
+Example of log output from your functional automation program:
 
 **test_collect.logs** : 
 ```txt
