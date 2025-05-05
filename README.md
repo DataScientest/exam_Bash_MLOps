@@ -2,23 +2,16 @@
 
 ## Exam
 
-This exam is divided into 2 exercises:
-
-- The first one is about the bash language (Mandatory to validate the module)  
-- The second one is about the jq tool (Optional)
-
-### Exam: Bash - MANDATORY
-
 You work for a company that sells graphics cards and you are tasked with automating a process for data collection, preprocessing, and training a sales prediction model. Your manager has assigned you a project where you will need to use Linux tools and scripts to automate each step of this process.
 
 Your goal is to design an automated pipeline that allows for:
 
 - **Collect data** from an API every minute,
-- **Save it** to a CSV file,
+- **Save it** in a CSV file,
 - **Preprocess it**, 
 - **Train a prediction model** on this preprocessed data.
 
-The entire process must be automated using **Bash scripts** to chain the different steps, **Python** for data processing and model training, **cron** to schedule the execution of scripts at regular intervals, and a **Makefile** to run all the steps in a single command line.
+The entire process must be automated using **Bash scripts** to chain the different steps, **Python** for data processing and model training, **cron** to schedule the execution of scripts at regular intervals, and a **Makefile** to run all steps in a single command line.
 
 ---
 
@@ -40,7 +33,7 @@ You now have a file with the `.tar` extension. It is simply an archive similar t
 
 - c : create the archive
 - x : extract the archive
-- f : use the file given as a parameter
+- f : use the specified file as a parameter
 - v : enable verbose mode.
 
 > Unzip the archive using the following command:
@@ -61,7 +54,7 @@ chmod +x api
 Our API is now running on `localhost` (0.0.0.0) on port 5000.
 
 <div class="alert alert-info"> <i class="icon circle info"></i>
-It is entirely possible to run the API without putting it in the background, but doing so will block any manipulation on your VM. You will then need to open a 2nd terminal and reconnect to the VM, working exclusively with the 2nd terminal.
+It is entirely possible to run the API without putting it in the background, but doing so will block any manipulation on your VM. You will then need to open a 2nd terminal and reconnect to the VM, working only with the 2nd terminal.
 </div>
 
 This API reveals the sales per minute of the largest graphics card resellers for the models rtx3060, rtx3070, rtx3080, rtx3090, and rx6700.
@@ -71,22 +64,37 @@ It is possible to retrieve this information using the **cURL** command. However,
 #### Apt Command
 
 `apt` is a package manager that contains various software that you can install quite easily with a single line of code.
-To do this, we can proceed as follows:
+
+On the current version of **Ubuntu 20.04.2 LTS**, you can use the `apt-get` command to manage software via the command line. This allows you to install, update, or remove packages precisely.
 
 ```shell
-apt install software_name
+apt-get install software_name
 ```
 
-In older versions of Ubuntu, you needed to use `apt-get` instead of `apt`. In most cases, you need `sudo` to enforce the installation rights of software.
+In most cases, you need `sudo` to enforce the installation rights of software.
 
-To ensure that the packages are up to date, you can use `sudo apt update`. To upgrade the software, you can use `sudo apt upgrade`. You can add or remove certain packages and completely remove a software using the `apt purge` function.
+Before installing anything, it is recommended to update the list of available packages on your system by running:
+
+```shell
+sudo apt-get update
+```
+
+Then, you can apply the available updates for your installed software with:
+```shell
+sudo apt-get upgrade
+```
+
+To remove a software along with its configuration files, you can use the command:
+```shell
+sudo apt-get purge software_name
+```
 
 > Install `curl` with `apt`.
 
 ```shell
 sudo apt-get update
 ```
-
+```shell	
 sudo apt-get install curl
 ```
 
@@ -106,19 +114,17 @@ curl "http://0.0.0.0:5000/rtx3060"
 
 - Create a folder exam_LASTNAME where LASTNAME is your last name.
 - Add a folder named exam_bash
-- Clone the Git for the exam modalities:
-```shell 
-git clone -b English https://github.com/DataScientest/exam_Bash_MLOps.git
-```
+- Clone the Git for the exam modalities: https://github.com/DataScientest/exam_Bash_MLOps.git in the `English` branch
+
 
 When cloning the git, you will have the following structure:
 ```txt
-exam_LASTNAME/
+exam_NAME/
   ├── exam_bash/
       ├── data/
       │   ├── processed/              # Preprocessed CSV files
       │   └── raw/
-      │       └── sales_data.csv      # Raw data CSV file (500 lines)
+      │       └── sales_data.csv      # CSV file of raw data (500 lines)
       ├── logs/
       │   ├── test_logs/
       │   ├── collect.logs            # Data collection logs
@@ -136,18 +142,18 @@ exam_LASTNAME/
       ├── tests/
       │   ├── test_collect.py         # Test for data collection and existence of the CSV
       │   ├── test_model.py           # Test for model training and existence of model.pkl
-      │   └── test_preprocessed.py    # Test for correct data preprocessing
+      │   └── test_preprocessed.py    # Test for proper data preprocessing
       ├── Makefile                    # Makefile to automate tasks
       ├── README.md                   # Project documentation
-      └── requirements.txt            # Project dependencies
+      ├── requirements.txt            # Project dependencies
+      ├── pyproject.toml              # Project configuration (dependencies and other settings)
+      └── uv.lock                     # Dependency lock file for uv
 ```
 > The version of Python used for this project is Python 3.12
 
-Run the following command to set up the environment with the correct version of Python and automatically install the necessary libraries for the proper functioning of the provided scripts:
-```bash
-uv sync
-```
+In the project tree, you will find the files **uv.lock** and **pyproject.toml** which are necessary for dependency management that must be configured following the various commands discussed in the course of best practices.
 
+Before starting the exam, make sure to sync with the project and activate your virtual environment.
 
 #### 1. **Data Collection**
 The process begins with the collection of graphics card sales data via an API that you will need to query every **3 minutes**. This data is retrieved and stored in a CSV file located in the `data/raw/` folder.
@@ -155,7 +161,7 @@ The process begins with the collection of graphics card sales data via an API th
 #### 2. **Data Preprocessing**
 Once the data is collected, you will need to apply preprocessing. This preprocessing may include:
 - Removing missing or incorrect values,
-- Converting the data into the appropriate format (e.g., date conversion or transforming data types),
+- Converting the data into the appropriate format (for example, date conversion or transforming data types),
 - Aggregating or filtering the data if necessary.
 
 The preprocessing results must be saved in a CSV file located in the `data/processed/` folder.
@@ -171,15 +177,18 @@ A **Makefile** will be used to facilitate the execution of tasks and automate th
 ```bash
 make bash
 ```
+Here is a diagram that briefly summarizes the expected operation of the program when executing this command:
 
-Make sure to activate your virtual environment before starting the exam.
+<center><img src="https://assets-datascientest.s3.eu-west-1.amazonaws.com/MLOPS/image.png" style="width:80%"/></center>
 
 #### Files to Modify
 
 You will find in the different files to modify, the instructions corresponding to each task to be completed.
 
+**⚠️ Attention: We will also assess the adherence to best practices in this exam.**
+
 1. **collect.sh**  
-   The script `collect.sh` must be modified to automate data collection every 2 minutes.
+   The script `collect.sh` must be modified to automate data collection every 3 minutes.
 
 2. **preprocessed.sh**  
    The script `preprocessed.sh` must be modified to initiate the preprocessing of the collected data.
@@ -201,17 +210,17 @@ You will find in the different files to modify, the instructions corresponding t
    ```bash  
    make bash  
    ```  
+
+   The workflow diagram is shown earlier in the README file.
+   
 8. **requirements.txt**  
-   The requirements.txt file must include only the libraries necessary for running the program, such as pandas, numpy, xgboost, etc.
+   The **requirements.txt** file should only include the libraries necessary for the execution of the program.
 
-Here is a diagram that briefly summarizes the expected operation of the program:
-
-<center><img src="https://assets-datascientest.s3.eu-west-1.amazonaws.com/MLOPS/image.png" style="width:80%"/></center>
-
+<br>
 
 ### Tests and Verifications
 
-You must not modify the provided test files. These will validate the compliance of your work.
+**⚠️ You must not modify the provided test files. These will validate the compliance of your work.**
 
 - **Data Collection Test** (`test_collect.py`)
 - **Model Training Test** (`test_model.py`)
@@ -224,7 +233,7 @@ make tests
 
 This will create files test_*.logs in logs/tests_logs.
 
-Example of log output from your functional automation program:
+Example of log output generated by your functional automation program:
 
 **test_collect.logs** : 
 ```txt
@@ -239,7 +248,7 @@ End of CSV structure test
 **test_preprocessed.logs** : 
 ```txt
 === Start of tests (2025-04-30 15:21:19) ===
-Start of the structure test for the preprocessed file
+Start of the preprocessed file structure test
 File loaded: data/processed/sales_processed_20250430_1516.csv
 Checking column 'timestamp': OK (not present)
 Checking integer types: OK (all columns are integers)
@@ -255,7 +264,7 @@ Test successful: the model file exists.
 === End of tests (2025-04-30 15:21:23) ===
 ```
 
-Once the entire program has been executed (collection, preprocessing, training), here is what you should observe:
+Once the entire program is executed (collection, preprocessing, training), here is what you should observe:
 
 **data/raw** :
 - CSV files containing the **raw sales data** automatically retrieved from the API.
@@ -271,12 +280,13 @@ Once the entire program has been executed (collection, preprocessing, training),
 
 ## Final Render
 
-> Create an archive exam_LASTNAME.tar
+> Create an archive exam_NAME.tar
 
 ```bash
-# Create a tar archive named exam_LASTNAME.tar containing the directory exam_LASTNAME
+# Create a tar archive named exam_NAME.tar from the directory exam_NAME
 
-tar -cvf exam_LASTNAME.tar exam_LASTNAME
+# Command:
+tar -cvf exam_NAME.tar exam_NAME
 ```
 
 ### SCP Command
@@ -286,7 +296,7 @@ The `scp` command allows for the secure transfer of a file or an archive (folder
 You can download your archive by running the following command `on a terminal of your own machine`.
 
 ```shell
-scp -i "data_enginering_machine.pem" ubuntu@YOUR_IP:~/exam_NAME.tar .
+scp -i "data_enginering_machine.pem" ubuntu@VOTRE_IP:~/exam_NAME.tar .
 ```
 
 <div class="alert alert-info"> <i class="icon circle info"></i>
