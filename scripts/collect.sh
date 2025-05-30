@@ -1,8 +1,7 @@
 # ==============================================================================
 # Script: collect.sh
 # Description:
-#   This script queries an API every minute for 3 minutes to retrieve sales data
-#   for the following graphics card models:
+#   This script queries an API to retrieve sales data for the following graphics card models:
 #     - rtx3060
 #     - rtx3070
 #     - rtx3080
