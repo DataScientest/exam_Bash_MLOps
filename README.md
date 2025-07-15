@@ -280,6 +280,8 @@ Once the entire program is executed (collection, preprocessing, training), here 
 
 ## Final Render
 
+**⚠️ Please do not include the `venv` folder in the project archive, as this will make the file considerably heavier.**
+   
 > Create an archive exam_NAME.tar
 
 ```bash
