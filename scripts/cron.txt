@@ -1,0 +1,1 @@
+* * * * * cd ~/exam_AMIRI/exam_Bash_MLOps && make bash >> logs/cron.log 2>&1
