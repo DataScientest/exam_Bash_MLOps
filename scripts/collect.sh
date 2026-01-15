@@ -1,3 +1,4 @@
+#!/bin/bash
 # ==============================================================================
 # Script: collect.sh
 # Description:
@@ -25,6 +26,10 @@
 #     - The queried models
 #     - The retrieved sales data
 #     - Any possible errors
+# **********************************************************
+# If running ./api failed, run this:
+#       sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+# **********************************************************
 # ==============================================================================
 
 set -euo pipefail
