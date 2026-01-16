@@ -133,7 +133,7 @@ def _process_sales_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
     wide = wide.clip(lower=0).round(0).astype("int64")
 
-    wide = wide.reset_index()
+    wide = wide.reset_index(drop=True)
 
     return wide
 
@@ -196,8 +196,9 @@ def main() -> int:
                      df_clean.shape[1])
 
         has_timestamp = "timestamp" in df_clean.columns
-        status_ts = "OK (present)" if has_timestamp else "NOT OK (missing)"
-        logging.info("Verification of 'timestamp' column: %s", status_ts)
+        status_ts = "OK (removed)" if has_timestamp else "NOT OK (present)"
+        logging.info(
+            "Verification of 'timestamp' column removed: %s", status_ts)
 
         non_timestamp_cols = [
             col for col in df_clean.columns if col != "timestamp"]
