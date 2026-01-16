@@ -19,7 +19,7 @@ logger() {
     local _MESSAGE=$2
     local _LOG_PATH=$3
     local _TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
-    echo "[$_TIMESTAMP] [$_LEVEL] $_MESSAGE" >> "$_LOG_PATH"
+    echo "[$_TIMESTAMP] | $_LEVEL | $_MESSAGE" >> "$_LOG_PATH"
 }
 
 check_environment() {
@@ -57,7 +57,7 @@ run_preprocessing() {
 main() {
     check_environment
 
-    logger "INFO" "NEW PREPROCESSING REQUEST" "$LOG_FILE"
+    logger "INFO" "NEW PREPROCESSING UPDATE REQUEST" "$LOG_FILE"
     
     run_preprocessing
 
