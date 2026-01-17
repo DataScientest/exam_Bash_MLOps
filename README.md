@@ -1,23 +1,18 @@
 # Linux & Bash
 
-## Exam
+## Examen
 
-You work for a company that sells graphics cards and you are tasked with automating a process for data collection, preprocessing, and training a sales prediction model. Your manager has assigned you a project where you will need to use Linux tools and scripts to automate each step of this process.
+Cet examen se décompose en 2 exercices :
 
-Your goal is to design an automated pipeline that allows for:
+- Le premier porte sur le langage bash (Obligatoire pour valider le module)
+- Le second porte sur l'outil jq (Optionnelle)
 
-- **Collect data** from an API every minute,
-- **Save it** in a CSV file,
-- **Preprocess it**, 
-- **Train a prediction model** on this preprocessed data.
+### Examen : Bash - OBLIGATOIRE
 
-The entire process must be automated using **Bash scripts** to chain the different steps, **Python** for data processing and model training, **cron** to schedule the execution of scripts at regular intervals, and a **Makefile** to run all steps in a single command line.
 
----
+#### Mise en place de l'API
 
-#### Setting up the API
-
-In this course, we have seen how a Linux system works. We could have gone even further into detail, but we have built the foundation for the rest of the journey. Follow the instructions below to complete the exercise.
+Dans ce cours, nous avons vu comment fonctionne un système Linux. Nous aurions pu aller encore plus en détail mais nous avons construit la base pour la suite du parcours. Suivez les instructions suivantes pour réaliser l'exercice.
 
 <div class="alert alert-info"><i class="icon circle info"></i>
 Exercise to be completed <i>mandatory</i> on the Linux machine provided to you.
@@ -61,35 +56,22 @@ This API reveals the sales per minute of the largest graphics card resellers for
 It is possible to retrieve this information using the **cURL** command. However, you may not have cURL on your machine; to remedy this, we use `apt` on Linux.
 
 
-#### Apt Command
+#### Commande apt
 
-`apt` is a package manager that contains various software that you can install quite easily with a single line of code.
-
-On the current version of **Ubuntu 20.04.2 LTS**, you can use the `apt-get` command to manage software via the command line. This allows you to install, update, or remove packages precisely.
-
-```shell
-apt-get install software_name
-```
-
-In most cases, you need `sudo` to enforce the installation rights of software.
-
-Before installing anything, it is recommended to update the list of available packages on your system by running:
+`apt` est un gestionnaire de paquets qui contiennent différents logiciels que vous pouvez installer assez facilement avec une seule ligne de code.
+Pour ce faire, nous pouvons faire comme suit :
 
 ```shell
-sudo apt-get update
+apt install software_name
 ```
 
-Then, you can apply the available updates for your installed software with:
-```shell
-sudo apt-get upgrade
-```
+Dans les anciennes versions d'Ubuntu, vous aviez besoin d'utiliser `apt-get` au lieu de `apt`.
+Dans la plupart des cas, vous avez besoin de `sudo` pour forcer les droits d'installation d'un logiciel.
 
-To remove a software along with its configuration files, you can use the command:
-```shell
-sudo apt-get purge software_name
-```
+Pour vous assurer que les paquets sont à jour, vous pouvez utiliser `sudo apt update` . Pour mettre à jour les
+logiciels, vous pouvez utiliser `sudo apt upgrade` . Vous pouvez ajouter ou supprimer certains paquets et supprimer complètement un logiciel utilisant la fonction `apt purge`.
 
-> Install `curl` with `apt`.
+> Installez `curl` avec `apt`.
 
 ```shell
 sudo apt-get update
@@ -110,11 +92,9 @@ We can, for example, retrieve the sales of RTX 3060 using the following command.
 curl "http://0.0.0.0:5000/rtx3060"
 ```
 
-### Setting up the exam
+> Créez un dossier exam_NOM ou NOM est votre nom de famille.
 
-- Create a folder exam_LASTNAME where LASTNAME is your last name.
-- Add a folder named exam_bash
-- Clone the Git for the exam modalities: https://github.com/DataScientest/exam_Bash_MLOps.git in the `English` branch
+> Ajoutez un dossier nommé exam_bash
 
 
 When cloning the git, you will have the following structure:
@@ -122,167 +102,139 @@ When cloning the git, you will have the following structure:
 exam_NAME/
   ├── exam_bash/
       ├── data/
-      │   ├── processed/              # Preprocessed CSV files
-      │   └── raw/
-      │       └── sales_data.csv      # CSV file of raw data (500 lines)
+        ├── processed/              # Dossier contenant les fichiers CSV prétraités
+        └── raw/
+            └── sales_data.csv      # Fichier CSV contenant 500 lignes de données brutes
       ├── logs/
-      │   ├── test_logs/
-      │   ├── collect.logs            # Data collection logs
-      │   ├── preprocessed.logs       # Data preprocessing logs
-      │   └── train.logs              # Model training logs
-      ├── model/                      # Storage for trained models
+          ├── test_logs/
+          ├── collect.logs            # Fichier de logs pour la collecte des données
+          ├── preprocessed.logs       # Fichier de logs pour le prétraitement des données collectées
+          └── train.logs              # Fichier de logs pour l'entraînement du modèle avec les données prétraitées
+      ├── model/                      # Dossier stockant toutes les versions des modèles entraînés
       ├── scripts/
-      │   ├── collect.sh              # Data collection script (every 2 minutes)
-      │   ├── preprocessed.sh         # Data preprocessing script
-      │   ├── train.sh                # Model training script
-      │   └── cron.txt                # Cron job configuration file
+          ├── collect.sh              # Script de collecte des données toutes les 2 minutes
+          ├── preprocessed.sh         # Script lançant le prétraitement des données collectées
+          ├── train.sh                # Script lançant l'entraînement du modèle avec les données prétraitées
+          └── cron.txt                # Fichier de configuration pour les tâches cron 
       ├── src/
-      │   ├── preprocessed.py         # Data preprocessing script (Python)
-      │   └── train.py                # Model training script (Python)
+          ├── preprocessed.py         # Script de prétraitement des données collectées
+          └── train.py                # Script d'entraînement du modèle avec les données prétraitées
       ├── tests/
-      │   ├── test_collect.py         # Test for data collection and existence of the CSV
-      │   ├── test_model.py           # Test for model training and existence of model.pkl
-      │   └── test_preprocessed.py    # Test for proper data preprocessing
-      ├── Makefile                    # Makefile to automate tasks
-      ├── README.md                   # Project documentation
-      ├── requirements.txt            # Project dependencies
-      ├── pyproject.toml              # Project configuration (dependencies and other settings)
-      └── uv.lock                     # Dependency lock file for uv
+          ├── test_collect.py         # Script de test pour vérifier la collecte des données et l'existence de fichiers CSV dans data/raw
+          ├── test_model.py           # Script de test pour vérifier l'entraînement du modèle et l'existence du fichier model.pkl
+          └── test_preprocessed.py    # Script de test pour vérifier le bon traitement des données                   
+      ├── Makefile                    # Fichier Makefile pour automatiser les tâches
+      ├── README.md                   # Fichier de documentation du projet
+      └── requirements.txt            # Fichier contenant les dépendances du projet
+
 ```
-> The version of Python used for this project is Python 3.12
 
-In the project tree, you will find the files **uv.lock** and **pyproject.toml** which are necessary for dependency management that must be configured following the various commands discussed in the course of best practices.
-
-Before starting the exam, make sure to sync with the project and activate your virtual environment.
-
-#### 1. **Data Collection**
-The process begins with the collection of graphics card sales data via an API that you will need to query every **3 minutes**. This data is retrieved and stored in a CSV file located in the `data/raw/` folder.
-
-#### 2. **Data Preprocessing**
-Once the data is collected, you will need to apply preprocessing. This preprocessing may include:
-- Removing missing or incorrect values,
-- Converting the data into the appropriate format (for example, date conversion or transforming data types),
-- Aggregating or filtering the data if necessary.
-
-The preprocessing results must be saved in a CSV file located in the `data/processed/` folder.
-
-#### 3. **Model Training**
-The preprocessed data will be used to train a graphics card sales prediction model. You will likely use an **XGBoost** model for this task. The trained model will be saved in the `model/` folder and will be used for future predictions.
-
-#### 4. **Automation via Cron**
-The complete process (data collection, preprocessing, and training) must be executed automatically. You will use **cron** to schedule the tasks to be executed every **3 minutes**. A `cron.txt` file will be provided to configure the cron tasks.
-
-#### 5. **Using a Makefile**
-A **Makefile** will be used to facilitate the execution of tasks and automate the entire pipeline with the following command:
-```bash
-make bash
-```
-Here is a diagram that briefly summarizes the expected operation of the program when executing this command:
-
-<center><img src="https://assets-datascientest.s3.eu-west-1.amazonaws.com/MLOPS/image.png" style="width:80%"/></center>
-
-#### Files to Modify
-
-You will find in the different files to modify, the instructions corresponding to each task to be completed.
-
-**⚠️ Attention: We will also assess the adherence to best practices in this exam.**
-
-1. **collect.sh**  
-   The script `collect.sh` must be modified to automate data collection every 3 minutes.
-
-2. **preprocessed.sh**  
-   The script `preprocessed.sh` must be modified to initiate the preprocessing of the collected data.
-
-3. **train.sh**  
-   The script `train.sh` must be modified to train the model with the preprocessed data.
-
-4. **cron.txt**  
-   You need to configure `cron.txt` to automatically run the collection, preprocessing, and model training every 3 minutes.
-
-5. **preprocessed.py**  
-   The script `preprocessed.py` must be modified to perform preprocessing of the collected data (cleaning, data transformation, etc.).
-
-6. **train.py**  
-   The script `train.py` must be modified to train the prediction model with the preprocessed data.
-
-7. **Makefile**  
-   The `Makefile` must be adjusted to automate the entire process with a single command :  
-   ```bash  
-   make bash  
-   ```  
-
-   The workflow diagram is shown earlier in the README file.
-   
-8. **requirements.txt**  
-   The **requirements.txt** file should only include the libraries necessary for the execution of the program.
+> Vous trouverez dans les répertoires **scripts/** et **src/** l’ensemble des consignes et des éléments attendus à mettre en œuvre.
+>
+> Veuillez ne pas modifier les fichiers de tests. Vous pouvez toutefois les consulter pour mieux comprendre les vérifications attendues. Ces tests vous offrent un premier aperçu de la conformité de votre travail. Pour les exécuter, utilisez la commande `make tests`.
 
 <br>
 
-### Tests and Verifications
+Votre fichier **cron.txt** doit être configuré pour exécuter automatiquement la collecte, le prétraitement et l'entraînement du modèle toutes les 3 minutes.
 
-**⚠️ You must not modify the provided test files. These will validate the compliance of your work.**
+Configurez également votre **Makefile** afin qu'une simple commande `make bash` permette de lancer l'ensemble du programme : collecte des données, prétraitement et entraînement du modèle.
 
-- **Data Collection Test** (`test_collect.py`)
-- **Model Training Test** (`test_model.py`)
-- **Data Preprocessing Test** (`test_preprocessed.py`)
+Votre fichier **requirements.txt** doit inclure uniquement les bibliothèques indispensables à l'exécution de votre programme, avec leurs versions précises.
 
-To run the tests, you can use the following command:
+Voici un diagramme qui résume brièvement le fonctionnement attendu du programme : 
+
+<center><img src="https://assets-datascientest.s3.eu-west-1.amazonaws.com/MLOPS/image.png" style="width:80%"/></center>
+
+Plus qu'un exercice à faire pour valider ce module !
+
+### 10.2 Examen : JQ - OPTIONNEL
+
+#### Mise en place
+
+Vous rentrerez les commandes dans un fichier exécutable (avec le droit d'exécution +x) `exam_jq.sh`. Afin de valider l'exercice, vous devez rendre le fichier `exam_jq.sh` ainsi qu'un fichier `res_jq.txt` alimenté à l'aide de la commande `./exam_jq.sh > res_jq.txt`. N'oubliez pas qu'un être humain corrigera vos fichiers, pensez donc à bien présenter vos résultats dans vos 2 fichiers.
+
+> Créez dans votre dossier exam\_NOM, le dossier exam\_jq
+
+> Rendez-vous dans celui-ci, et créez un fichier `exam_jq.sh` comme ceci :
+
 ```bash
-make tests
+#!/bin/bash
+
+echo "1. Énoncé de la question 1"
+<commande pour répondre>
+echo "Commande : <commande pour répondre>"
+echo "Réponse : réponse de la question 1 si demandé"
+echo -e "\n---------------------------------\n"
+...
+
+echo "n. Énoncé de la question n"
+<commande pour répondre>
+echo "Commande : <commande pour répondre>"
+echo "Réponse : réponse de la question n si demandé"
+echo -e "\n---------------------------------\n"
 ```
 
-This will create files test_*.logs in logs/tests_logs.
+- <commande pour répondre> : placez la commande liée à la question afin d'avoir le résultat de la commande dans le fichier `res_jq.txt`.
 
-Example of log output generated by your functional automation program:
+Remplissez les champs selon les questions évidemment. La réponse n'est pas le résultat du code mais votre interprétation de celui-ci.
 
-**test_collect.logs** : 
-```txt
-=== Start of tests (2025-04-30 15:21:03) ===
-Start of CSV structure test
-CSV file loaded with 520 lines and 3 columns
-Test successful: The CSV is valid.
-End of CSV structure test
-=== End of tests ===
+#### Questions
+
+Voici le fichier json qui va servir pour la réalisation de l'examen: 
+
+```bash
+wget https://dst-de.s3.eu-west-3.amazonaws.com/bash_fr/people.json
 ```
 
-**test_preprocessed.logs** : 
-```txt
-=== Start of tests (2025-04-30 15:21:19) ===
-Start of the preprocessed file structure test
-File loaded: data/processed/sales_processed_20250430_1516.csv
-Checking column 'timestamp': OK (not present)
-Checking integer types: OK (all columns are integers)
-Test completed for the preprocessed file.
-=== End of tests ===
+Seules les questions 1, 2 et 4 attendent une Réponse interprétée.
+
+1. Affichez le nombre d'attributs par document ainsi que l'attribut name. Combien y a-t-il d'attribut par document ? N'affichez que les 12 premières lignes avec la commande head (notebook #2).
+
+2. Combien y a-t-il de valeur "unknown" pour l'attribut "birth_year" ? Utilisez la commande tail afin d'isoler la réponse.
+
+3. Affichez la date de création de chaque personnage et son nom. La date de création doit être de cette forme : l'année, le mois et le jour. N'affichez que les 10 premières lignes. (Pas de Réponse attendue)
+
+4. Certains personnages sont nés en même temps. Retrouvez toutes les pairs d'ids (2 ids) des personnages nés en même temps.
+
+5. Renvoyez le numéro du premier film (de la liste) dans lequel chaque personnage a été vu suivi du nom du personnage. N'affichez que les 10 premières lignes. (Pas de Réponse attendue)
+
+#### Bonus
+
+Ajoutez cette commande pour séparer la partie obligatoire de la partie optionnelle.
+
+```bash
+echo -e "\n----------------BONUS----------------\n"
 ```
 
-**test_model.logs** : 
-```txt
-=== Start of tests (2025-04-30 15:21:23) ===
-Start of model file presence test
-Test successful: the model file exists.
-=== End of tests (2025-04-30 15:21:23) ===
-```
+Aucune Réponse n'est demandée.
 
-Once the entire program is executed (collection, preprocessing, training), here is what you should observe:
+Enregistrez chacune des commandes dans des fichiers au format : people_\<numéro\_de\_la\_question>.json
+Ces fichiers doivent se trouver dans un dossier bonus/.
 
-**data/raw** :
-- CSV files containing the **raw sales data** automatically retrieved from the API.
-- These files follow a naming convention of the type: `sales_YYYYMMDD_HHMM.csv`.
+N'ajoutez rien au fichier `res_jq.txt`. Vous devez faire la redirection directement dans le fichier `exam_jq.sh`.
 
-**data/processed/** :
-- CSV files containing the **preprocessed data**, ready to be used for model training.
-- These files follow a naming convention of the type: `sales_processed_YYYYMMDD_HHMM.csv`.
+Les questions sont à réaliser depuis le fichier créé à la question précédente, sauf pour la question 6.
 
-**model/** :
-- One or more versions of the **trained model**, saved as a `.pkl` file.
-- Example: `model.pkl` or `model_YYYYMMDD_HHMM.pkl`.
+6. Supprimez les documents lorsque l'attribut height n'est pas un nombre.
 
-## Final Render
+7. Transformer l'attribut height en nombre.
 
-**⚠️ Please do not include the `venv` folder in the project archive, as this will make the file considerably heavier.**
-   
-> Create an archive exam_NAME.tar
+8. Ne renvoyez que les personnages dont la taille est entre 156 et 171.
+
+9. Renvoyez le plus petit individu de `people_8.json` et affichez cette phrase en une seule commande : "\<nom\_du\_personnage> is \<taille> tall"
+Renvoyez la commande dans un fichier `people_9.txt` et non `.json`.
+
+#### Rendu : JQ
+
+Nous avons les dossiers et fichiers suivants :
+
+- exam\_NOM/exam\_jq/exam\_jq.sh
+- exam\_NOM/exam\_jq/res\_jq.txt
+- exam\_NOM/exam\_jq/bonus/people\_\<6 à 9>.\<json ou txt>
+
+#### Rendu final
+
+> Créez une archive exam_NOM.tar
 
 ```bash
 # Create a tar archive named exam_NAME.tar from the directory exam_NAME
