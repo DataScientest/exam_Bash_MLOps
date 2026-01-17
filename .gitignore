@@ -4,6 +4,15 @@
 *.vscode
 *api*
 data/*
+logs/*
+*.logs
+model/*
+*pkl
+*.zip
+*.tar*
+*.uv.lock
+*.csv
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
