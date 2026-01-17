@@ -1,0 +1,132 @@
+[2026-01-16 19:36:45] | INFO | NEW TRAINING REQUEST
+[2026-01-16 19:36:45] | INFO | Initializing Model Training ...
+[2026-01-16 19:36:46,865] | INFO | *** Start of model training ***
+[2026-01-16 19:36:46,865] | INFO | *** Start of model training ***
+[2026-01-16 19:36:46,865] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1936.csv
+[2026-01-16 19:36:46,865] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1936.csv
+[2026-01-16 19:36:46,867] | INFO | File loded: sales_processed_20260116_1936.csv | shape=(108, 6)
+[2026-01-16 19:36:46,867] | INFO | File loded: sales_processed_20260116_1936.csv | shape=(108, 6)
+[2026-01-16 19:36:46,870] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:36:46,870] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:36:47,494] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:36:47,494] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:36:47,498] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1936.pkl
+[2026-01-16 19:36:47,498] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1936.pkl
+[2026-01-16 19:36:47,498] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1936.pkl
+[2026-01-16 19:36:47,498] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1936.pkl
+[2026-01-16 19:36:47,498] | INFO | *** End of model training ***
+[2026-01-16 19:36:47,498] | INFO | *** End of model training ***
+[2026-01-16 19:36:47] | INFO | Model training completed and saved to model/ directory.
+[2026-01-16 19:36:47] | INFO | End of Training Task.
+********************
+
+[2026-01-16 19:37:58] | INFO | NEW TRAINING REQUEST
+[2026-01-16 19:37:58] | INFO | Initializing Model Training ...
+[2026-01-16 19:38:00,088] | INFO | *** Start of model training ***
+[2026-01-16 19:38:00,088] | INFO | *** Start of model training ***
+[2026-01-16 19:38:00,088] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1937.csv
+[2026-01-16 19:38:00,088] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1937.csv
+[2026-01-16 19:38:00,090] | INFO | File loded: sales_processed_20260116_1937.csv | shape=(108, 6)
+[2026-01-16 19:38:00,090] | INFO | File loded: sales_processed_20260116_1937.csv | shape=(108, 6)
+[2026-01-16 19:38:00,093] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:38:00,093] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:38:00,477] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:38:00,477] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:38:00,480] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1938.pkl
+[2026-01-16 19:38:00,480] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1938.pkl
+[2026-01-16 19:38:00,480] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1938.pkl
+[2026-01-16 19:38:00,480] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1938.pkl
+[2026-01-16 19:38:00,480] | INFO | *** End of model training ***
+[2026-01-16 19:38:00,480] | INFO | *** End of model training ***
+[2026-01-16 19:38:00] | INFO | Model training completed and saved to model/ directory.
+[2026-01-16 19:38:00] | INFO | End of Training Task.
+********************
+
+[2026-01-16 19:38:30] | INFO | NEW TRAINING REQUEST
+[2026-01-16 19:38:30] | INFO | Initializing Model Training ...
+[2026-01-16 19:38:31,673] | INFO | *** Start of model training ***
+[2026-01-16 19:38:31,673] | INFO | *** Start of model training ***
+[2026-01-16 19:38:31,674] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1938.csv
+[2026-01-16 19:38:31,674] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1938.csv
+[2026-01-16 19:38:31,676] | INFO | File loded: sales_processed_20260116_1938.csv | shape=(108, 6)
+[2026-01-16 19:38:31,676] | INFO | File loded: sales_processed_20260116_1938.csv | shape=(108, 6)
+[2026-01-16 19:38:31,679] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:38:31,679] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:38:32,014] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:38:32,014] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:38:32,019] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1938.pkl
+[2026-01-16 19:38:32,019] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1938.pkl
+[2026-01-16 19:38:32,019] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1938.pkl
+[2026-01-16 19:38:32,019] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1938.pkl
+[2026-01-16 19:38:32,019] | INFO | *** End of model training ***
+[2026-01-16 19:38:32,019] | INFO | *** End of model training ***
+[2026-01-16 19:38:32] | INFO | Model training completed and saved to model/ directory.
+[2026-01-16 19:38:32] | INFO | End of Training Task.
+********************
+
+[2026-01-16 19:39:09] | INFO | NEW TRAINING REQUEST
+[2026-01-16 19:39:09] | INFO | Initializing Model Training ...
+[2026-01-16 19:39:10,282] | INFO | *** Start of model training ***
+[2026-01-16 19:39:10,282] | INFO | *** Start of model training ***
+[2026-01-16 19:39:10,283] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1939.csv
+[2026-01-16 19:39:10,283] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1939.csv
+[2026-01-16 19:39:10,285] | INFO | File loded: sales_processed_20260116_1939.csv | shape=(108, 6)
+[2026-01-16 19:39:10,285] | INFO | File loded: sales_processed_20260116_1939.csv | shape=(108, 6)
+[2026-01-16 19:39:10,288] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:39:10,288] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:39:10,684] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:39:10,684] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:39:10,688] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1939.pkl
+[2026-01-16 19:39:10,688] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1939.pkl
+[2026-01-16 19:39:10,688] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1939.pkl
+[2026-01-16 19:39:10,688] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1939.pkl
+[2026-01-16 19:39:10,688] | INFO | *** End of model training ***
+[2026-01-16 19:39:10,688] | INFO | *** End of model training ***
+[2026-01-16 19:39:10] | INFO | Model training completed and saved to model/ directory.
+[2026-01-16 19:39:10] | INFO | End of Training Task.
+********************
+
+[2026-01-16 19:40:04] | INFO | NEW TRAINING REQUEST
+[2026-01-16 19:40:04] | INFO | Initializing Model Training ...
+[2026-01-16 19:40:06,019] | INFO | *** Start of model training ***
+[2026-01-16 19:40:06,019] | INFO | *** Start of model training ***
+[2026-01-16 19:40:06,019] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1940.csv
+[2026-01-16 19:40:06,019] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1940.csv
+[2026-01-16 19:40:06,021] | INFO | File loded: sales_processed_20260116_1940.csv | shape=(108, 6)
+[2026-01-16 19:40:06,021] | INFO | File loded: sales_processed_20260116_1940.csv | shape=(108, 6)
+[2026-01-16 19:40:06,024] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:40:06,024] | INFO | Training data size: X=(108, 5), y=(108,)
+[2026-01-16 19:40:06,418] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:40:06,418] | INFO | Metrics — RMSE: 4570185780352.1211 | MAE: 4110674034688.0000 | R²: -0.6411
+[2026-01-16 19:40:06,421] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1940.pkl
+[2026-01-16 19:40:06,421] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1940.pkl
+[2026-01-16 19:40:06,421] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1940.pkl
+[2026-01-16 19:40:06,421] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1940.pkl
+[2026-01-16 19:40:06,421] | INFO | *** End of model training ***
+[2026-01-16 19:40:06,421] | INFO | *** End of model training ***
+[2026-01-16 19:40:06] | INFO | Model training completed and saved to model/ directory.
+[2026-01-16 19:40:06] | INFO | End of Training Task.
+********************
+
+[2026-01-16 19:50:11] | INFO | NEW TRAINING REQUEST
+[2026-01-16 19:50:11] | INFO | Initializing Model Training ...
+[2026-01-16 19:50:12,397] | INFO | *** Start of model training ***
+[2026-01-16 19:50:12,397] | INFO | *** Start of model training ***
+[2026-01-16 19:50:12,397] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1950.csv
+[2026-01-16 19:50:12,397] | INFO | Latest processed CSV: /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1950.csv
+[2026-01-16 19:50:12,399] | INFO | File loded: sales_processed_20260116_1950.csv | shape=(108, 5)
+[2026-01-16 19:50:12,399] | INFO | File loded: sales_processed_20260116_1950.csv | shape=(108, 5)
+[2026-01-16 19:50:12,400] | INFO | Training data size: X=(108, 4), y=(108,)
+[2026-01-16 19:50:12,400] | INFO | Training data size: X=(108, 4), y=(108,)
+[2026-01-16 19:50:12,719] | INFO | Metrics — RMSE: 4.3889 | MAE: 2.4460 | R²: 0.5487
+[2026-01-16 19:50:12,719] | INFO | Metrics — RMSE: 4.3889 | MAE: 2.4460 | R²: 0.5487
+[2026-01-16 19:50:12,722] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1950.pkl
+[2026-01-16 19:50:12,722] | INFO | Model saved with timestamped version: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1950.pkl
+[2026-01-16 19:50:12,722] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1950.pkl
+[2026-01-16 19:50:12,722] | INFO | Model saved: /home/santiago/Documents/MyScripts/Bash_MLOps/model/model_20260116_1950.pkl
+[2026-01-16 19:50:12,723] | INFO | *** End of model training ***
+[2026-01-16 19:50:12,723] | INFO | *** End of model training ***
+[2026-01-16 19:50:12] | INFO | Model training completed and saved to model/ directory.
+[2026-01-16 19:50:12] | INFO | End of Training Task.
+********************
+

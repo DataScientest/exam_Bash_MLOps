@@ -1,1 +1,63 @@
+[2026-01-16 19:38:50] | INFO | NEW UPDATE REQUEST
+[2026-01-16 19:38:50] | WARNING | The Trying so soon! Please try again later!
+********************
+
+[2026-01-16 19:39:08] | INFO | NEW UPDATE REQUEST
+[2026-01-16 19:39:08] | INFO | The latest csv file is: sales_data_20260116_1938.csv
+[2026-01-16 19:39:08] | INFO | Collecting Data...
+[2026-01-16 19:39:08] | INFO | Writing into file (append) : data/raw/sales_data_20260116_1939.csv
+[2026-01-16 19:39:08] | INFO | Timestamp (UTC) : 2026-01-16 19:39:08
+[2026-01-16 19:39:08] | INFO | Models: rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2026-01-16 19:39:08] | ERROR | API Request (http://127.0.0.1:5000/rtx3060)
+[2026-01-16 19:39:08] | Warning |  | rtx3060 -> fall back to 0 (Failed API)
+[2026-01-16 19:39:08] | INFO | Result | rtx3060 -> 0
+[2026-01-16 19:39:08] | ERROR | API Request (http://127.0.0.1:5000/rtx3070)
+[2026-01-16 19:39:08] | Warning |  | rtx3070 -> fall back to 0 (Failed API)
+[2026-01-16 19:39:08] | INFO | Result | rtx3070 -> 0
+[2026-01-16 19:39:08] | ERROR | API Request (http://127.0.0.1:5000/rtx3080)
+[2026-01-16 19:39:08] | Warning |  | rtx3080 -> fall back to 0 (Failed API)
+[2026-01-16 19:39:08] | INFO | Result | rtx3080 -> 0
+[2026-01-16 19:39:08] | ERROR | API Request (http://127.0.0.1:5000/rtx3090)
+[2026-01-16 19:39:08] | Warning |  | rtx3090 -> fall back to 0 (Failed API)
+[2026-01-16 19:39:08] | INFO | Result | rtx3090 -> 0
+[2026-01-16 19:39:08] | ERROR | API Request (http://127.0.0.1:5000/rx6700)
+[2026-01-16 19:39:08] | Warning |  | rx6700 -> fall back to 0 (Failed API)
+[2026-01-16 19:39:08] | INFO | Result | rx6700 -> 0
+[2026-01-16 19:39:08] | INFO | File summary: data/raw/sales_data_20260116_1939.csv | lines=546 columns=3
+[2026-01-16 19:39:08] | INFO | End of Collections.
+********************
+
+[2026-01-16 19:40:04] | INFO | NEW UPDATE REQUEST
+[2026-01-16 19:40:04] | INFO | The latest csv file is: sales_data_20260114_1936.csv
+[2026-01-16 19:40:04] | INFO | Collecting Data...
+[2026-01-16 19:40:04] | INFO | Writing into file (append) : data/raw/sales_data_20260116_1940.csv
+[2026-01-16 19:40:04] | INFO | Timestamp (UTC) : 2026-01-16 19:40:04
+[2026-01-16 19:40:04] | INFO | Models: rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2026-01-16 19:40:04] | INFO | Result | rtx3060 -> 6
+[2026-01-16 19:40:04] | INFO | Result | rtx3070 -> 3
+[2026-01-16 19:40:04] | INFO | Result | rtx3080 -> 3
+[2026-01-16 19:40:04] | INFO | Result | rtx3090 -> 14
+[2026-01-16 19:40:04] | INFO | Result | rx6700 -> 5
+[2026-01-16 19:40:04] | INFO | File summary: data/raw/sales_data_20260116_1940.csv | lines=516 columns=3
+[2026-01-16 19:40:04] | INFO | End of Collections.
+********************
+
+[2026-01-16 19:50:10] | INFO | NEW UPDATE REQUEST
+[2026-01-16 19:50:10] | INFO | The latest csv file is: sales_data_20260116_1940.csv
+[2026-01-16 19:50:10] | INFO | Collecting Data...
+[2026-01-16 19:50:10] | INFO | Writing into file (append) : data/raw/sales_data_20260116_1950.csv
+[2026-01-16 19:50:10] | INFO | Timestamp (UTC) : 2026-01-16 19:50:10
+[2026-01-16 19:50:10] | INFO | Models: rtx3060 rtx3070 rtx3080 rtx3090 rx6700
+[2026-01-16 19:50:10] | INFO | Result | rtx3060 -> 2
+[2026-01-16 19:50:10] | INFO | Result | rtx3070 -> 14
+[2026-01-16 19:50:10] | INFO | Result | rtx3080 -> 14
+[2026-01-16 19:50:10] | INFO | Result | rtx3090 -> 5
+[2026-01-16 19:50:10] | INFO | Result | rx6700 -> 2
+[2026-01-16 19:50:10] | INFO | File summary: data/raw/sales_data_20260116_1950.csv | lines=521 columns=3
+[2026-01-16 19:50:10] | INFO | End of Collections.
+********************
+
+[2026-01-16 19:50:44] | INFO | NEW UPDATE REQUEST
+[2026-01-16 19:50:44] | WARNING | The Trying so soon! Please try again later!
+********************
 

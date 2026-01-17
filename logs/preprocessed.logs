@@ -1,0 +1,64 @@
+[2026-01-16 19:37:58] | INFO | Python preprocessing completed successfully.
+[2026-01-16 19:37:58] | INFO | End of Preprocessing Task.
+********************
+
+[2026-01-16 19:38:30] | INFO | NEW PREPROCESSING UPDATE REQUEST
+[2026-01-16 19:38:30] | INFO | Starting Preprocessing Pipeline...
+[2026-01-16 19:38:30,435] | INFO | *** Start of preprocessing ***
+[2026-01-16 19:38:30,435] | INFO | Loading the raw file : /home/santiago/Documents/MyScripts/Bash_MLOps/data/raw/sales_data_20260116_1938.csv
+[2026-01-16 19:38:30,437] | INFO | FRaw file loaded with 540 rows and 3 columns
+[2026-01-16 19:38:30,447] | INFO | After pivoting & cleaning: 108 rows and 6 columns
+[2026-01-16 19:38:30,447] | INFO | Verification of 'timestamp' column: OK (present)
+[2026-01-16 19:38:30,447] | INFO | Integer type checking: OK (all columns are integers)
+[2026-01-16 19:38:30,449] | INFO | Preprocessed file saved : /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1938.csv
+[2026-01-16 19:38:30,449] | INFO | *** End of preprocessing ***
+
+[2026-01-16 19:38:30] | INFO | Python preprocessing completed successfully.
+[2026-01-16 19:38:30] | INFO | End of Preprocessing Task.
+********************
+
+[2026-01-16 19:39:08] | INFO | NEW PREPROCESSING UPDATE REQUEST
+[2026-01-16 19:39:08] | INFO | Starting Preprocessing Pipeline...
+[2026-01-16 19:39:09,008] | INFO | *** Start of preprocessing ***
+[2026-01-16 19:39:09,009] | INFO | Loading the raw file : /home/santiago/Documents/MyScripts/Bash_MLOps/data/raw/sales_data_20260116_1939.csv
+[2026-01-16 19:39:09,010] | INFO | FRaw file loaded with 545 rows and 3 columns
+[2026-01-16 19:39:09,020] | INFO | After pivoting & cleaning: 108 rows and 6 columns
+[2026-01-16 19:39:09,020] | INFO | Verification of 'timestamp' column: OK (present)
+[2026-01-16 19:39:09,020] | INFO | Integer type checking: OK (all columns are integers)
+[2026-01-16 19:39:09,022] | INFO | Preprocessed file saved : /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1939.csv
+[2026-01-16 19:39:09,022] | INFO | *** End of preprocessing ***
+
+[2026-01-16 19:39:09] | INFO | Python preprocessing completed successfully.
+[2026-01-16 19:39:09] | INFO | End of Preprocessing Task.
+********************
+
+[2026-01-16 19:40:04] | INFO | NEW PREPROCESSING UPDATE REQUEST
+[2026-01-16 19:40:04] | INFO | Starting Preprocessing Pipeline...
+[2026-01-16 19:40:04,763] | INFO | *** Start of preprocessing ***
+[2026-01-16 19:40:04,763] | INFO | Loading the raw file : /home/santiago/Documents/MyScripts/Bash_MLOps/data/raw/sales_data_20260116_1940.csv
+[2026-01-16 19:40:04,765] | INFO | FRaw file loaded with 515 rows and 3 columns
+[2026-01-16 19:40:04,774] | INFO | After pivoting & cleaning: 108 rows and 6 columns
+[2026-01-16 19:40:04,774] | INFO | Verification of 'timestamp' column: OK (present)
+[2026-01-16 19:40:04,775] | INFO | Integer type checking: OK (all columns are integers)
+[2026-01-16 19:40:04,776] | INFO | Preprocessed file saved : /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1940.csv
+[2026-01-16 19:40:04,776] | INFO | *** End of preprocessing ***
+
+[2026-01-16 19:40:04] | INFO | Python preprocessing completed successfully.
+[2026-01-16 19:40:04] | INFO | End of Preprocessing Task.
+********************
+
+[2026-01-16 19:50:10] | INFO | NEW PREPROCESSING UPDATE REQUEST
+[2026-01-16 19:50:10] | INFO | Starting Preprocessing Pipeline...
+[2026-01-16 19:50:11,040] | INFO | *** Start of preprocessing ***
+[2026-01-16 19:50:11,041] | INFO | Loading the raw file : /home/santiago/Documents/MyScripts/Bash_MLOps/data/raw/sales_data_20260116_1950.csv
+[2026-01-16 19:50:11,042] | INFO | FRaw file loaded with 520 rows and 3 columns
+[2026-01-16 19:50:11,051] | INFO | After pivoting & cleaning: 108 rows and 5 columns
+[2026-01-16 19:50:11,052] | INFO | Verification of 'timestamp' column removed: NOT OK (present)
+[2026-01-16 19:50:11,052] | INFO | Integer type checking: OK (all columns are integers)
+[2026-01-16 19:50:11,053] | INFO | Preprocessed file saved : /home/santiago/Documents/MyScripts/Bash_MLOps/data/processed/sales_processed_20260116_1950.csv
+[2026-01-16 19:50:11,053] | INFO | *** End of preprocessing ***
+
+[2026-01-16 19:50:11] | INFO | Python preprocessing completed successfully.
+[2026-01-16 19:50:11] | INFO | End of Preprocessing Task.
+********************
+
